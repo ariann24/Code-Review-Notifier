@@ -1,0 +1,15 @@
+﻿<Window x:Class="CodeReviewNotifierUI.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CRUCIBLE NOTIFIER LOGIN" Height="369" Width="763" WindowStartupLocation="CenterScreen" Background="#FF00B4CB" FontFamily="Calibri" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Label Height="45" HorizontalAlignment="Left" Margin="223,113,0,0" Name="UserLabel" VerticalAlignment="Top" Width="285" Background="#FF40C7DA" />
+        <Label Height="45" HorizontalAlignment="Left" Margin="223,177,0,0" Name="PasswordLabel" VerticalAlignment="Top" Background="#FF40C7DA" Width="285" />
+        <TextBox Height="34" HorizontalAlignment="Left" Margin="271,118,0,0" Name="Username" VerticalAlignment="Top" Width="229" FontSize="18" Background="#FFDCEED4" />
+        <PasswordBox Height="34" HorizontalAlignment="Left" Margin="271,182,0,0" Name="Password" VerticalAlignment="Top" Width="229" FontSize="18" Background="#FFDCEED4" />
+        <Button Content="LOGIN" Height="47" HorizontalAlignment="Left" Margin="223,246,0,0" Name="LoginButton" VerticalAlignment="Top" Width="285" Background="#FF078EBB" Foreground="White" FontSize="18" Click="LoginButton_Click" />
+        <Image Height="76" HorizontalAlignment="Left" Margin="324,23,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="88" Source="/CodeReviewNotifierUI;component/Image/login_logo.png" />
+        <Image Height="31" HorizontalAlignment="Left" Margin="232,119,0,0" Name="image2" Source="/CodeReviewNotifierUI;component/Image/username_icon.png" Stretch="Fill" VerticalAlignment="Top" Width="33" />
+        <Image Height="31" HorizontalAlignment="Left" Margin="232,183,0,0" Name="image3" Source="/CodeReviewNotifierUI;component/Image/pw_icon.png" Stretch="Fill" VerticalAlignment="Top" Width="33" />
+    </Grid>
+</Window>

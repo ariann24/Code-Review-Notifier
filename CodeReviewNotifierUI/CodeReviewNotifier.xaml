@@ -1,0 +1,64 @@
+﻿<Window x:Class="CodeReviewNotifierUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="463" Width="889" Background="#FF00B4CB" WindowStartupLocation="CenterScreen" FontFamily="Calibri" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid Height="368" Width="786">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="77*" />
+            <ColumnDefinition Width="36*" />
+            <ColumnDefinition Width="64*" />
+            <ColumnDefinition Width="24*" />
+            <ColumnDefinition Width="562*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Height="535" HorizontalAlignment="Left" Margin="-12,3,0,0" Name="tabControl1" VerticalAlignment="Top" Width="828" Grid.ColumnSpan="5" Background="White">
+            <TabItem Header="REVIEWS" Name="tabItem1" FontSize="14" Background="#FF00B4CB" Width="150" Padding="35,1,7,1" Margin="-2">                
+                <Grid Background="#0000B4CB" Height="534" Width="850">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*" />
+                        <RowDefinition Height="511*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="151*" />
+                        <ColumnDefinition Width="513*" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid ItemsSource="{Binding ElementName=This, Path=GameData}" AutoGenerateColumns="True" Height="305" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="786" HorizontalGridLinesBrush="#FFFFFFB5" AlternatingRowBackground="#FFFFFFB5" Grid.ColumnSpan="3" CanUserResizeColumns="True" MouseDoubleClick="dataGrid1_MouseDoubleClick" SelectionChanged="dataGrid1_SelectionChanged" FontWeight="Bold" FontSize="14" Grid.Column="1" Margin="0,-1,0,0" Grid.RowSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Author" MinWidth="190" CanUserSort="True" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Code Review ID" MinWidth="190" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Link ID" MinWidth="190" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="State" MinWidth="190" FontFamily="Calibri" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="GET REVIEWS" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="9,287,0,0" Name="button1" VerticalAlignment="Top" Width="110" Click="getReviews_Click" Grid.Row="1" />
+                    <Label Content="0" Grid.Column="2" Height="23" HorizontalAlignment="Right" Margin="0,287,517,0" Name="labelCount" VerticalAlignment="Top" Width="104" Grid.Row="1" Grid.ColumnSpan="2" />
+                    <Label Content="No. of Reviews:" Grid.Column="2" Grid.Row="1" Height="23" Margin="6,287,62,0" Name="label1" VerticalAlignment="Top" />
+                    <Button Content="Notify Icon" Grid.Column="3" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="410,286,0,0" Name="button2" VerticalAlignment="Top" Width="75" Click="button2_Click" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="MODERATOR" Name="tabItem2" FontSize="14" Background="#FF00B4CB" Width="150" Padding="35,1,7,1" Margin="-2">
+                <Grid Background="#0000B4CB" Height="503">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="163*" />
+                        <ColumnDefinition Width="655*" />
+                    </Grid.ColumnDefinitions>
+                    <DataGrid AlternatingRowBackground="#FFFFFFB5" AutoGenerateColumns="True" Height="369" HorizontalAlignment="Left" HorizontalGridLinesBrush="#FFFFFFB5" Margin="1,-3,0,0" Name="dataGrid2" VerticalAlignment="Top" Width="803" Grid.Column="2" Grid.ColumnSpan="2" FontWeight="Bold" ItemsSource="{Binding}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Author" MinWidth="150" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Code Review ID" MinWidth="150" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Date" MinWidth="150" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Status" MinWidth="150" FontFamily="Calibri" />
+                            <DataGridTextColumn Header="Comment" MinWidth="150" FontFamily="Calibri" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ComboBox Grid.Column="4" Height="25" HorizontalAlignment="Left" Margin="449,-25,0,0" Name="signOutBox" VerticalAlignment="Top" Width="120" Background="#FF00B4CB" FontStretch="Condensed" Foreground="Black">
+            <ComboBoxItem Content="SIGN OUT" FontStretch="Condensed"/>
+        </ComboBox>
+    </Grid>
+</Window>
