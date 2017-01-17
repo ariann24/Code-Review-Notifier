@@ -1,0 +1,192 @@
+﻿<Window x:Class="CodeReviewNotifier.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:CodeReviewNotifier.Helper"
+        Title="Code Review Notifier v1.1" Height="369" Width="763" WindowStartupLocation="CenterScreen" Background="#00B4CB" FontFamily="Calibri" Icon="/CodeReviewNotifier;component/Images/login_logo.png" Closed="Window_Closed" StateChanged="Window_StateChanged" Closing="Window_Closing">
+    
+    <Grid x:Name="MainPage">
+        <Grid Visibility="{Binding ReviewPageVisibility}" Width="200" Height="88" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9*" />
+                <RowDefinition Height="61*" />
+            </Grid.RowDefinitions>
+            <Button Command="{Binding LogOutCommand}" Content="Log Out" Height="23" HorizontalAlignment="Right" Name="btnSignOut" VerticalAlignment="Top" Margin="0,0,10,0" Width="75" Grid.Row="1" Background="LightGray" Foreground="Black" FontWeight="Normal" />
+            <Button Command="{Binding OpenSettingsPageCommand}" Content="Settings" Height="23" HorizontalAlignment="Left" Name="btnSettings" VerticalAlignment="Bottom" Margin="0,0,10,0" Width="75" Grid.Row="2" Background="#FF078EBB" Foreground="White" FontWeight="Normal" />
+            <Button Command="{Binding GetReviewsCommand}" Content="Get Reviews" Height="23" HorizontalAlignment="Right" Name="button1" VerticalAlignment="Bottom" Margin="0,0,10,0" Width="75" Grid.Row="2" Background="#FF078EBB" Foreground="White" FontWeight="Normal" />
+        </Grid>
+
+        <Grid x:Name="LoginPage" Visibility="{Binding LoginPageVisibility}">
+            <Label Background="#FF40C7DA" Height="45" HorizontalAlignment="Left" Margin="223,113,0,0" Name="UserLabel" VerticalAlignment="Top" Width="285" />
+            <Label Background="#FF40C7DA" Height="45" HorizontalAlignment="Left" Margin="223,177,0,0" Name="PasswordLabel" VerticalAlignment="Top" Width="285" DataContext="{Binding}" />
+            <TextBox Text="{Binding Username}" Background="#FFDCEED4" FontSize="18" Height="34" HorizontalAlignment="Left" Margin="271,118,0,0" Name="txtUsername" VerticalAlignment="Top" Width="229" VerticalContentAlignment="Center" PreviewKeyDown="txtUsername_PreviewKeyDown" />
+            <PasswordBox local:PasswordHelper.Attach="True" local:PasswordHelper.Password="{Binding Text, ElementName=plain, Mode=TwoWay}" Background="#FFDCEED4" FontSize="18" Height="34" HorizontalAlignment="Left" Margin="271,182,0,0" Name="txtPassword" VerticalAlignment="Top" Width="229" IsEnabled="True" Password="" VerticalContentAlignment="Center" PreviewKeyDown="txtPassword_PreviewKeyDown"/>
+            <Button Command="{Binding LoginCommand}" Background="#FF078EBB" Content="LOGIN" FontSize="18" Foreground="White" Height="47" HorizontalAlignment="Left" Margin="223,246,0,0" Name="LoginButton" VerticalAlignment="Top" Width="285"/>
+            <Image Height="76" HorizontalAlignment="Left" Margin="324,23,0,0" Name="image1" Source="/CodeReviewNotifier;component/Images/login_logo.png" Stretch="Fill" VerticalAlignment="Top" Width="88" />
+            <Image Height="31" HorizontalAlignment="Left" Margin="232,119,0,0" Name="image2" Source="/CodeReviewNotifier;component/Images/username_icon.png" Stretch="Fill" VerticalAlignment="Top" Width="33" />
+            <Image Height="31" HorizontalAlignment="Left" Margin="232,183,0,0" Name="image3" Source="/CodeReviewNotifier;component/Images/pw_icon.png" Stretch="Fill" VerticalAlignment="Top" Width="33" />
+            <TextBox Visibility="Hidden" Background="#FFDCEED4" FontSize="18" Height="22" HorizontalAlignment="Left" Margin="514,192,0,0" x:Name="plain" VerticalAlignment="Top" Width="14" TextChanged="SavePassword" />
+            <TextBlock Visibility="{Binding InvalidCredentials}" Height="33" HorizontalAlignment="Left" Margin="515,124,0,0" Name="lblInvalidCredentials" Text="Invalid Username or Password" VerticalAlignment="Top" Width="203" FontSize="16" Foreground="#FFDD3A68" FontWeight="Normal" />
+        </Grid>
+
+        <Grid x:Name="Reviewpage" Visibility="{Binding ReviewPageVisibility}" Margin="0,0,0,12">
+            <TabControl Margin="10,95,10,0" Background="#FF00B4CB" Padding="0">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="imgReview" Height="auto" Width="auto" Source="/CodeReviewNotifier;component/Images/review_icon_blue.png" />
+                            <TextBlock Text="Review" Margin="5,0,5,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid ItemsSource="{Binding Reviews}" GridLinesVisibility="None" SelectedCellsChanged="Row_Select" CanUserAddRows="False" HeadersVisibility="Column" AlternatingRowBackground="#F4F4F4" FontWeight="Normal" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Padding="10" BorderThickness="0" Name="gridReview" AutoGenerateColumns="False" FontSize="14">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn MinWidth="100" Width="15*" Header="PermID" Binding="{Binding PermID}" />
+                            <DataGridTextColumn MinWidth="100" Width="20*" Header="Author" Binding="{Binding Author}" />
+                            <DataGridTextColumn MinWidth="200" Width="50*" Header="Description" Binding="{Binding Description}" />
+                            <DataGridTextColumn MinWidth="100" Width="15*" Header="Comment" Binding="{Binding CommentCountDisplay}" />
+                            <DataGridTextColumn MinWidth="120" Width="20*" Header="Date Created" Binding="{Binding DateCreated}" />
+                            <DataGridTextColumn MinWidth="100" Width="20*" Header="State" Binding="{Binding State}" />
+                        </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#27DBFC" />
+                                <Setter Property="Padding" Value="10" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />                                
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                            <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGrid.CellStyle>
+                    </DataGrid>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="imgReviewModerator" Height="auto" Width="auto" Source="/CodeReviewNotifier;component/Images/mod_icon_blue.png" />
+                            <TextBlock Text="Moderator" Margin="5,0,5,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid ItemsSource="{Binding ModeratorReviews}" GridLinesVisibility="None" SelectedCellsChanged="ModeratorRow_Select" CanUserAddRows="False" HeadersVisibility="Column" AlternatingRowBackground="#F4F4F4" FontWeight="Normal" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Padding="10" BorderThickness="0" Name="gridModeratorReview" AutoGenerateColumns="False" FontSize="14">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn MinWidth="100" Width="10*" Header="PermID" Binding="{Binding PermID}" />
+                            <DataGridTextColumn MinWidth="100" Width="15*" Header="Author" Binding="{Binding Author}" />
+                            <DataGridTextColumn MinWidth="200" Width="30*" Header="Description" Binding="{Binding Description}" />
+                            <DataGridTextColumn MinWidth="150" Width="15*" Header="Reviewers Status" Binding="{Binding ReviewsStatus}" />
+                            <DataGridTextColumn MinWidth="100" Width="10*" Header="Comment" Binding="{Binding CommentCountDisplay}" />
+                            <DataGridTextColumn MinWidth="120" Width="10*" Header="Date Created" Binding="{Binding DateCreated}" />
+                            <DataGridTextColumn MinWidth="100" Width="10*" Header="State" Binding="{Binding State}" />
+                        </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#27DBFC" />
+                                <Setter Property="Padding" Value="10" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                            <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGrid.CellStyle>
+                    </DataGrid>
+                </TabItem>
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Name="imgMyReview" Height="auto" Width="auto" Source="/CodeReviewNotifier;component/Images/review_icon_blue.png" />
+                            <TextBlock Text="My Review" Margin="5,0,5,0" VerticalAlignment="Center" FontSize="14" FontWeight="Bold" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <DataGrid ItemsSource="{Binding MyReviews}" GridLinesVisibility="None" SelectedCellsChanged="MyReviewRow_Select" CanUserAddRows="False" HeadersVisibility="Column" AlternatingRowBackground="#F4F4F4" FontWeight="Normal" HorizontalGridLinesBrush="{x:Null}" VerticalGridLinesBrush="{x:Null}" Padding="10" BorderThickness="0" Name="gridMyReview" AutoGenerateColumns="False" FontSize="14">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn MinWidth="100" Width="15*" Header="PermID" Binding="{Binding PermID}" />
+                            <DataGridTextColumn MinWidth="100" Width="20*" Header="Author" Binding="{Binding Author}" />
+                            <DataGridTextColumn MinWidth="200" Width="50*" Header="Description" Binding="{Binding Description}" />
+                            <DataGridTextColumn MinWidth="100" Width="15*" Header="Comment" Binding="{Binding CommentCountDisplay}" />
+                            <DataGridTextColumn MinWidth="120" Width="20*" Header="Date Created" Binding="{Binding DateCreated}" />
+                            <DataGridTextColumn MinWidth="100" Width="20*" Header="State" Binding="{Binding State}" />
+                        </DataGrid.Columns>
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="#27DBFC" />
+                                <Setter Property="Padding" Value="10" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                            </Style>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="Padding" Value="10"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                            <Border Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                                <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </DataGrid.CellStyle>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+            <Image Height="53" HorizontalAlignment="Left" Name="reviewPageLogo" Source="/CodeReviewNotifier;component/Images/login_logo.png" Stretch="Fill" VerticalAlignment="Top" Width="60" Margin="11,15,0,0" />
+            <TextBlock Text="{Binding WelcomeText}" Height="34" HorizontalAlignment="Left" Margin="94,27,0,0" Name="lblWelcome" VerticalAlignment="Top" Width="Auto" Foreground="White" FontSize="24" />
+            <Grid Visibility="{Binding SettingsPageVisibility}">
+                <WrapPanel Background="Black" Width="Auto" Margin="0,-11,0,-12" Opacity=".5"/>
+                <WrapPanel HorizontalAlignment="Right">
+                    <Border CornerRadius="5" BorderThickness="1" Panel.ZIndex="10" Margin="0,100,0,0" Background="White">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" Direction="270" ShadowDepth="7" Opacity="0.5"/>
+                        </Border.Effect>
+                    </Border>
+                    <WrapPanel Orientation="Horizontal" Background="White" Width="270" Height="250"  Margin="0,90,125,0" >
+                        <TextBlock Text="Time Interval" Height="23" HorizontalAlignment="Left" Name="txtSetTimeInterval" VerticalAlignment="Center" Width="75" Margin="5,30,0,10" />
+                        <TextBox Text="{Binding TimerInterval}" Height="23" HorizontalAlignment="Left" Name="txtTimerInterval" VerticalAlignment="Center" Width="150" Margin="15,30,0,24" Grid.Row="1" VerticalContentAlignment="Center" />
+                        <TextBlock Text="Default Browser" Height="23" HorizontalAlignment="Right" Name="txtDefaultBrowser" VerticalAlignment="Center" Width="auto" Margin="5,5,10,0" />
+                        <StackPanel>
+                            <ComboBox Name="cmbBrowsers" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,10,10" Width="150" ItemsSource="{Binding Browsers}" SelectedItem="{Binding SelectedBrowser}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"></TextBlock>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                        <Button Command="{Binding CloseSettingsPageCommand}" Content="OK" Background="#FF078EBB" Foreground="White" Height="23" HorizontalAlignment="Right" Name="btnSetSettings" VerticalAlignment="Center" Width="75" Margin="90,80,10,24" />
+                    </WrapPanel>
+                </WrapPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</Window>
