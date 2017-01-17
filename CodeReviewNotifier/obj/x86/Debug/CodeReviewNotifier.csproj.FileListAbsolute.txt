@@ -1,0 +1,33 @@
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.pdb
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Form1.resources
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Properties.Resources.resources
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.exe
+c:\users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.pdb
+C:\Users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe.config
+C:\Users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\fs185063\documents\visual studio 2010\Projects\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Form1.resources
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe.config
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.pdb
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Form1.resources
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Properties.Resources.resources
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.exe
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.pdb
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\Image\twitter.ico
+C:\Users\fs185063\Documents\Kenken\RES Team\Projects\CodeReviewNotifier\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\Image\cyra.ico
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\Image\cyra.ico
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe.config
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.exe
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\bin\Debug\CodeReviewNotifier.pdb
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.Properties.Resources.resources
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.exe
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\CodeReviewNotifier\obj\x86\Debug\CodeReviewNotifier.pdb
