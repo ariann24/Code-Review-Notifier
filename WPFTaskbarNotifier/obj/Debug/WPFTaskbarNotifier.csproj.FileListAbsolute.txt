@@ -1,0 +1,16 @@
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\bin\Debug\WPFTaskbarNotifier.dll
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\bin\Debug\WPFTaskbarNotifier.pdb
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.Properties.Resources.resources
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\ResGen.read.1.tlog
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\ResGen.write.1.tlog
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.dll
+C:\Users\AA185236\Documents\notifierIcon\WPFTaskbarNotifier_src\WPFTaskbarNotifierExample\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.pdb
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\bin\Debug\WPFTaskbarNotifier.dll
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\bin\Debug\WPFTaskbarNotifier.pdb
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.Properties.Resources.resources
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\ResGen.read.1.tlog
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\ResGen.write.1.tlog
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.dll
+C:\Users\AA185236\Desktop\CrucibleNotifier\branches\CodeReviewNotifier\WPFTaskbarNotifier\obj\Debug\WPFTaskbarNotifier.pdb
